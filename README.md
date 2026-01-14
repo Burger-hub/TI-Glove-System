@@ -23,32 +23,32 @@ The project is organized as follows based on the system's functional modules:
 
 ```text
 TI-Glove-System/
-├── applications/               # HMI Application Demos
-│   ├── intuitive_interface/    # PC interface control (Zoom/Move) via gestures
-│   ├── lighting_adjust/        # Smart home lighting control
-│   │   ├── SendDemo_new/       # Arduino firmware (.ino) for IR control
-│   │   └── light_control.py    # Python control script
-│   ├── robot_control/          # Robot hand/vehicle control
-│   │   ├── firmware/           # MCU code (4th.cpp) for robot (HC-12 module)
-│   │   └── hand_control.py     # Python bridge script
-│   └── vr_interaction/         # Python bridge for VR data forwarding
+├── applications/                     # HMI Application Demos
+│   ├── intuitive_interface/          # PC interface control (Zoom/Move) via gestures
+│   ├── lighting_adjust/              # Smart home lighting control
+│   │   ├── SendDemo_new/             # Arduino firmware (.ino) for IR control
+│   │   └── WIFI_py_plot_new_light.py # Python control script
+│   ├── robot_control/                # Robot hand/vehicle control
+│   │   ├── firmware/                 # MCU code (4th.cpp) for robot (HC-12 module)
+│   │   └── WIFI_py_plot_new_hand.py  # Python bridge script
+│   └── vr_interaction/               # VR Application
+│       ├── WIFI_py_plot_new_VR.py    # Python bridge for VR data forwarding
+│       └── HandContrl2/              # Unity 3D Project for VR Interaction
+│           ├── Assets/               # Core source: Scripts (C#), Scenes, Prefabs
+│           ├── Packages/             # Unity dependencies
+│           └── ProjectSettings/      # Project configuration
 │
-├── HandContrl2/                # Unity 3D Project for VR Interaction
-│   ├── Assets/                 # Core source: Scripts (C#), Scenes, Prefabs
-│   ├── Packages/               # Unity dependencies
-│   └── ProjectSettings/        # Project configuration
+├── models/                           # Deep Learning for Sign Language Recognition
+│   ├── data/                         # Dataset (CSV samples for 10 gestures)
+│   ├── model_98.44.pt                # Pre-trained PyTorch model checkpoint
+│   ├── main_CNN.py                   # Training and evaluation script
+│   └── WIFI_py_plot_new_gesture.py   # Real-time inference script
 │
-├── models/                     # Deep Learning for Sign Language Recognition
-│   ├── data/                   # Dataset (CSV samples for 10 gestures)
-│   ├── model_98.44.pt          # Pre-trained PyTorch model checkpoint
-│   ├── main_CNN.py             # Training and evaluation script
-│   └── WIFI_py_plot_new_gesture.py  # Real-time inference script
+├── server/                           # Data Acquisition & Visualization
+│   ├── WIFI_py_plot_new_all.py       # Main server script to receive ESP32 Wi-Fi data
+│   └── NetAssist.exe                 # Network debugging tool
 │
-├── server/                     # Data Acquisition & Visualization
-│   ├── WIFI_py_plot_new_all.py # Main server script to receive ESP32 Wi-Fi data
-│   └── NetAssist.exe           # Network debugging tool
-│
-└── docs/                       # Papers and Reference Manuals
+└── docs/                             # Papers and Reference Manuals
 ```
 
 ## 🚀 Getting Started
@@ -128,7 +128,12 @@ Press Play in Unity Editor to control the virtual hand.
 
 #### Smart Lighting:
 - Flash `applications/lighting_adjust/SendDemo_new/SendDemo_new.ino` to the Arduino controlling the lights.
-- Run `python applications/lighting_adjust/WIFI_py_plot_new_light.py`.
+
+- Run the control script:
+
+```bash
+python applications/lighting_adjust/WIFI_py_plot_new_light.py
+```
 
 ## 🔗 Citation
 
