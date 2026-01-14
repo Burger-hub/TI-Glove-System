@@ -1,0 +1,25 @@
+NEC协议
+波特率115200
+
+关于引脚没反应是因为需要在
+#include <IRremote.h>附近增一句
+#define IR_SEND_PIN 3
+#define IR_RECEIVE_PIN      11
+
+Serial.print(IrReceiver.decodedIRData.decodedRawData); //打印出当前信号的值
+
+#turn up
+Protocol=NEC Address=0xEF00 Command=0x0 Raw-Data=0xFF00EF00 32 bits LSB first
+Send with: IrSender.sendNEC(0xEF00, 0x0, <numberOfRepeats>);
+
+#turn down
+Protocol=NEC Address=0xEF00 Command=0x1 Raw-Data=0xFE01EF00 32 bits LSB first
+Send with: IrSender.sendNEC(0xEF00, 0x1, <numberOfRepeats>);
+
+#off
+Protocol=NEC Address=0xEF00 Command=0x2 Raw-Data=0xFD02EF00 32 bits LSB first
+Send with: IrSender.sendNEC(0xEF00, 0x2, <numberOfRepeats>);
+
+#On
+Protocol=NEC Address=0xEF00 Command=0x3 Raw-Data=0xFC03EF00 32 bits LSB first
+Send with: IrSender.sendNEC(0xEF00, 0x3, <numberOfRepeats>);
