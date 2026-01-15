@@ -1,10 +1,7 @@
 
 # TI-Glove-System: Triboelectric-Inertial Dual-Mode Sensing Glove
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)  
-[![Paper](https://img.shields.io/badge/Paper-Advanced%20Science-blue)](https://onlinelibrary.wiley.com/doi/10.1002/advs.202408689)  
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)  
-[![Unity](https://img.shields.io/badge/Unity-2021.3%2B-black)](https://unity.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)   [![Paper](https://img.shields.io/badge/Paper-Advanced%20Science-blue)](https://onlinelibrary.wiley.com/doi/10.1002/advs.202408689)   [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)   [![Unity](https://img.shields.io/badge/Unity-2021.3%2B-black)](https://unity.com/)
 
 **Official implementation code for the paper:**  
 > **Triboelectric-Inertial Sensing Glove Enhanced by Charge-Retained Strategy for Human-Machine Interaction**  
